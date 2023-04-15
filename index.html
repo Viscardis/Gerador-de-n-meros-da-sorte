@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QueSorte.com</title>
+    
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>QueSorte.com</h1>
+    <label for="numeros">Quantos números aleatórios você quer gerar?</label>
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <input type="number" id="numeros" name="numeros">
+    <button id="gerar-btn" onclick="gerarNumeros()">Iniciar</button>
+    <p id="resultado"></p>
+    <p id="ganhou"></p>
+
+    <script>
+      var premiado;
+      function gerarNumeros() {
+        var numeros = document.getElementById("numeros").value;
+        var resultado = "";
+        var numerosSorteados = [];
+        var ganhouEl = document.getElementById("ganhou");
+        var loadingEl = document.querySelector(".loading");
+    
+        // exibe o loading por 3 segundos
+        loadingEl.style.display = "block";
+        setTimeout(function() {
+          loadingEl.style.display = "none";
+          premiado = Math.floor(Math.random() * 10);
+          for (var i = 1; i <= numeros; i++) {
+            var numero = Math.floor(Math.random() * 10);
+            numerosSorteados.push(numero);
+            resultado += numero + " ";
+          }
+    
+          if (numerosSorteados.indexOf(premiado) === -1) {
+            numerosSorteados.push(premiado);
+          }
+          var mensagem = "Hehe, você foi o sortudo: " + numerosSorteados.join("  ");
+          ganhouEl.innerHTML = mensagem;
+          ganhouEl.classList.add("piscar");
+          setTimeout(function() {
+            ganhouEl.classList.remove("piscar");
+          }, 3000);
+        }, 2000);
+      }
+      function zerarResultado() {
+        var resultadoEl = document.getElementById("resultado");
+        var ganhouEl = document.getElementById("ganhou");
+    
+        resultadoEl.innerHTML = "";
+        ganhouEl.innerHTML = "";
+      }
+    </script>
+    
+  </body>
+</html>
+
+

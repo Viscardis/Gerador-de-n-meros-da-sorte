@@ -1,0 +1,92 @@
+body {
+  background-image: url('fundo.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  input[type=number] {
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+  }
+  
+  button {
+    display: block;
+    margin: 20px auto 0;
+    font-size: 18px;
+    color: #fff;
+    background-color: #1ABC9C;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #16A085;
+  }
+  
+  .loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .loading div {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #16A085;
+    margin: 0 5px;
+    animation: loading 1
+  
+  }
+  #ganhou {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif:
+  color: red;
+  }
+  
+  #ganhou.piscar {
+    animation-name: piscar;
+    animation-duration: 0.5s;
+    animation-iteration-count: 6;
+  }
+  
+  @keyframes piscar {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
