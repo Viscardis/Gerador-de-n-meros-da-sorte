@@ -1,1 +1,1 @@
-# Gerador-de-n-meros-da-sorte
+# Gerador de números aleatórios
